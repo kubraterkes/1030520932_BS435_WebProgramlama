@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import {MyProgressBar} from "./MyProgressBar";
+import {Alert} from "react-bootstrap";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [totalCount, setTotalCount] = useState(0);
+    return (
+        <div className="App">
+            <Alert variant="success">
+                Total count: {totalCount}!
+            </Alert>
+            <MyProgressBar changeCount={setTotalCount} variant="info"/>
+            <MyProgressBar changeCount={setTotalCount} variant="warning"/>
+            <MyProgressBar changeCount={setTotalCount} variant="danger"/>
+            <MyProgressBar changeCount={setTotalCount} variant="dark"/>
+            <MyProgressBar changeCount={setTotalCount} variant="light"/>
+        </div>
+    );
 }
 
 export default App;
