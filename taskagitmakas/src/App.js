@@ -1,46 +1,60 @@
-
-import React from "react";
+import React, { useState, useEffect } from "react";
+import './App.css'; // Bu dosyayı oluşturduğunuz CSS dosyası ile değiştirin
 
 function App() {
-  return (<div>
-    <head>
-    <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles/12-rock-paper-scissors.css"/>
-  </head>
-  <body>
-    <p class="title">Rock Paper Scissors</p>
-    <button class="move-button js-rock-button">
-      <img src="images/rock-emoji.png" class="move-icon"/>
-    </button>
+  const [score, setScore] = useState({
+    wins: 0,
+    losses: 0,
+    ties: 0
+  });
 
-    <button class="move-button js-paper-button">
-      <img src="images/paper-emoji.png" class="move-icon"/>
-    </button>
+  useEffect(() => {
+    updateScoreElement();
+  }, [score]);
 
-    <button class="move-button js-scissors-button">
-      <img src="images/scissors-emoji.png" class="move-icon"/>
-    </button>
+  const [isAutoPlaying, setIsAutoPlaying] = useState(false);
+  const [intervalId, setIntervalId] = useState(null);
 
-    <p class="js-result result"></p>
-    <p class="js-moves"></p>
-    <p class="js-score score"></p>
+  const autoPlay = () => {
+    if (!isAutoPlaying) {
+      const newIntervalId = setInterval(() => {
+        const playerMove = pickComputerMove();
+        playGame(playerMove);
+      }, 1000);
+      setIsAutoPlaying(true);
+      setIntervalId(newIntervalId);
+    } else {
+      clearInterval(intervalId);
+      setIsAutoPlaying(false);
+    }
+  };
 
-    <button onclick="
-      score.wins = 0;
-      score.losses = 0;
-      score.ties = 0;
-      localStorage.removeItem('score');
-      updateScoreElement();
-    " class="reset-score-button js-reset-score-button">Reset Score</button>
+  const playGame = (playerMove) => {
+    // Oyunu oynayan fonksiyon
+    // ...
+  };
 
-    <button class="auto-play-button" onclick="
-      autoPlay();
-    ">Auto Play</button>
-    
-    <script src="scripts/12-rock-paper-scissors.js"></script>
-  </body>
+  const updateScoreElement = () => {
+    // Skorun ekrandaki gösterimini güncelleyen fonksiyon
+    // ...
+  };
 
-  </div>);
+  const pickComputerMove = () => {
+    // Bilgisayarın rastgele hamle seçtiği fonksiyon
+    // ...
+  };
+
+  return (
+    <div className="container">
+      <h1>Welcome to Rock, Paper, Scissors Game</h1>
+      <div>
+        {/* Butonlar ve diğer elementler */}
+      </div>
+      <div className="content">
+        {/* Skor ve oyun sonucu gösterimi */}
+      </div>
+    </div>
+  );
 }
 
 export default App;
