@@ -30,6 +30,8 @@ function calculateWinner(action1, action2) {
   return null;
 }
 
+
+
 function ActionIcon({ action, ...props }) {
   const icons = {
     rock: FaHandRock,
@@ -80,6 +82,8 @@ function Game() {
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
   const [winner, setWinner] = useState(0);
+
+
 
   const onActionSelected = (selectedAction) => {
     const newComputerAction = randomAction();

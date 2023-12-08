@@ -1,18 +1,18 @@
 :root {
-  --primary: #0d47a1;
-  --primary-dark: #002171;
-  --primary-light: #5472d3;
+  --primary: #333;
+  --primary-dark: #333;
+  --primary-light: #c0d354;
   --primary-text: #ffffff;
 }
 
-html {
+html,body {
   background-color: var(--primary);
 }
 
 h1 {
   font-size: 24px;
   margin: 0;
-  background-color: var(--primary-dark);
+  background-color: var(--primary);
   color: var(--primary-text);
   padding: 8px;
 }
@@ -47,7 +47,7 @@ h2 {
   padding: 1px;
   font-size: small;
   font-weight: bold;
-  background-color: var(--primary-dark);
+  background-color: var(--primary);
 }
 
 .action {
@@ -56,7 +56,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  color: var(--primary);
+  color: var(--primary-light);
 }
 
 .round-btn {
@@ -67,9 +67,9 @@ h2 {
   margin: 2px;
   cursor: pointer;
   background-color: var(--primary-dark);
-  color: var(--primary-text);
+  color: var(--primary-light);
 }
 
 .round-btn:hover {
-  background-color: var(--primary-light);
+  background-color: var(--primary-text);
 }
