@@ -1,13 +1,11 @@
 import "./Game.css";
-import { FaHandRock, FaHandPaper, FaHandScissors, FaHandLizard, FaHandSpock } from "react-icons/fa";
+import { FaHandRock, FaHandPaper, FaHandScissors } from "react-icons/fa";
 import { useState } from "react";
 
 const actions = {
-  rock: ["scissors", "lizard"],
-  paper: ["rock", "spock"],
-  scissors: ["paper", "lizard"],
-  lizard: ["paper", "spock"],
-  spock: ["scissors", "rock"],
+  rock: ["scissors"],
+  paper: ["rock"],
+  scissors: ["paper"]
 };
 
 function randomAction() {
@@ -36,9 +34,7 @@ function ActionIcon({ action, ...props }) {
   const icons = {
     rock: FaHandRock,
     paper: FaHandPaper,
-    scissors: FaHandScissors,
-    lizard: FaHandLizard,
-    spock: FaHandSpock,
+    scissors: FaHandScissors
   };
   const Icon = icons[action];
   return <Icon {...props} />;
@@ -65,9 +61,9 @@ function ActionButton({ action = "rock", onActionSelected }) {
 
 function ShowWinner({winner = 0}) {
   const text = {
-    "-1": "You Win!",
-    0: "It's a Tie",
-    1: "You Lose!",
+    "-1": "Kazandınız!",
+    0: "Eşitsiniz!",
+    1: "Kaybettiniz!",
   };
 
   return (
@@ -76,8 +72,8 @@ function ShowWinner({winner = 0}) {
 }
 
 function Game() {
-  const [playerAction, setPlayerAction] = useState("");
-  const [computerAction, setComputerAction] = useState("");
+  const [playerAction, setPlayerAction] = useState(""); //null
+  const [computerAction, setComputerAction] = useState(""); //null
 
   const [playerScore, setPlayerScore] = useState(0);
   const [computerScore, setComputerScore] = useState(0);
@@ -102,12 +98,12 @@ function Game() {
 
   return (
     <div className="center">
-      <h1>Rock Paper Scissors</h1>
+      <h1>Taş Kağıt Makas</h1>
       <div>
         <div className="container">
-          <Player name="Player" score={playerScore} action={playerAction} />
+          <Player name="Siz" score={playerScore} action={playerAction} />
           <Player
-            name="Computer"
+            name="Bilgisayar"
             score={computerScore}
             action={computerAction}
           />
@@ -116,8 +112,6 @@ function Game() {
           <ActionButton action="rock" onActionSelected={onActionSelected} />
           <ActionButton action="paper" onActionSelected={onActionSelected} />
           <ActionButton action="scissors" onActionSelected={onActionSelected} />
-          <ActionButton action="lizard" onActionSelected={onActionSelected} />
-          <ActionButton action="spock" onActionSelected={onActionSelected} />
         </div>
         <ShowWinner winner={winner}/>
       </div>
