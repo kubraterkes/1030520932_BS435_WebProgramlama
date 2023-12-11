@@ -1,9 +1,8 @@
 /* kullanılacak renkler*/
 :root {
   --primary: #333;
-  --primary-dark: #333;
-  --primary-light: #c0d354;
-  --primary-text: #ffffff;
+  --primary-yellow: #c0d354;
+  --primary-white: #ffffff;
 }
 
 html,body {
@@ -14,13 +13,13 @@ h1 {
   font-size: 24px;
   margin: 0;
   background-color: var(--primary);
-  color: var(--primary-text);
+  color: var(--primary-white);
   padding: 8px;
 }
 
 h2 {
   font-size: 18px;
-  color: var(--primary-text);
+  color: var(--primary-white);
 }
 
 .center {
@@ -35,13 +34,14 @@ h2 {
 }
 
 .player {
+  border-radius: 50%;
   margin: 10px;
   width: 120px;
   height: 120px;
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-text);
-  color: var(--primary-text);
+  background-color: var(--primary-white);
+  color: var(--primary-white);
 }
 
 .score {
@@ -49,6 +49,7 @@ h2 {
   font-size: small;
   font-weight: bold;
   background-color: var(--primary);
+  margin: inherit;
 }
 
 .action {
@@ -57,7 +58,7 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-  color: var(--primary-light);
+  color: var(--primary-yellow);
 }
 
 .round-btn {
@@ -67,10 +68,10 @@ h2 {
   border: none;
   margin: 2px;
   cursor: pointer;
-  background-color: var(--primary-dark);
-  color: var(--primary-light);
+  background-color: var(--primary);
+  color: var(--primary-yellow);
 }
 
 .round-btn:hover {
-  background-color: var(--primary-text);
+  background-color: var(--primary-white);
 }
