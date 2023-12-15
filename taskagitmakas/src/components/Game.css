@@ -41,9 +41,11 @@ h2 {
   width: 120px;
   height: 120px;
   display: flex;
+  border: var(--primary-yellow) solid 3px ;
   flex-direction: column;
   background-color: var(--primary-white);
   color: var(--primary-white);
+  box-shadow: 15px 5px 10px var(--primary-yellow);
 }
 
 .score {
@@ -67,11 +69,12 @@ h2 {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: none;
+  border: var(--primary-white) solid 1px ;
   margin: 2px;
   cursor: pointer;
   background-color: var(--primary);
   color: var(--primary-yellow);
+  box-shadow: 1px 1px 10px var(--primary-white);
 }
 
 /*butonun üzerine gelindiğinde*/
