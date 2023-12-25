@@ -24,7 +24,6 @@ function calculateWinner(action1, action2) {
     return 1;
   }
 
-  // This should never really happen
   return null;
 }
 

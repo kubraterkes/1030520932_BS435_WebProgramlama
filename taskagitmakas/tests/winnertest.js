@@ -1,4 +1,4 @@
-import { calculateWinner } from '../src/Game'; // calculateWinner fonksiyonunun bulunduğu yerin doğru olduğundan emin olun
+import { calculateWinner } from '../src/Game';
 
 describe('calculateWinner function tests', () => {
   test('Aynı seçim sonucu kontrol etme', () => {
