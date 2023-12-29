@@ -8,6 +8,7 @@ const actions = {
   scissors: ["paper"]
 };
 
+//funciton tabanlı
 function randomAction() {
   const keys = Object.keys(actions);
   const index = Math.floor(Math.random() * keys.length);
